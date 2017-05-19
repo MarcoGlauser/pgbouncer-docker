@@ -6,8 +6,8 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" > /etc/
 	apt-get update && \
 	apt-get -y install pgbouncer
 
-ENV PG_ENV_POSTGRESQL_MAX_CLIENT_CONN 10000
-ENV PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE 400
+ENV PG_ENV_POSTGRESQL_MAX_CLIENT_CONN 1000
+ENV PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE 100
 ENV PG_ENV_POSTGRESQL_SERVER_IDLE_TIMEOUT 240
 ENV PG_ENV_POSTGRESQL_POOL_MODE transaction
 COPY run.sh /usr/local/bin/run
